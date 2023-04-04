@@ -20,7 +20,7 @@ const Header = () => {
             </div>
             <div className="col-5">
               <div><Link to="/home/form" className='d-flex align-items-center gap-10 text-white'>
-                <p className='mb-0'> Add Todo <br /> </p>
+                <p className='btn bg-white text-primary mx-2'> Add Todo <br /> </p>
               </Link>
               </div>
             </div>
