@@ -5,6 +5,7 @@ import { useFormik } from 'formik';
 import * as yup from 'yup';
 import { useDispatch } from 'react-redux';
 import { editTodo, singleTodo } from '../features/todo/todoSlice';
+import Layout from './Layout';
 
 
 const signUpSchema = yup.object({
@@ -43,7 +44,7 @@ const Edit = () => {
             }));
 
             if (!action.error) {
-                navigate('/');
+                navigate('/home');
               }
 
 
@@ -51,8 +52,10 @@ const Edit = () => {
     });
 
     return (
-        <div className="container">
-            <NavLink to="/">home2</NavLink>
+        <>
+            <Layout/>
+            <div className="container">
+            <NavLink to="/home">home2</NavLink>
             <form className="mt-4" onSubmit={formik.handleSubmit} >
                 <div className="row">
                     <div className="mb-3 col-lg-6 col-md-6 col-12">
@@ -99,6 +102,8 @@ const Edit = () => {
 
 
         </div>
+        </>
+      
     )
 }
 

@@ -25,10 +25,7 @@ const Table = () => {
         <>
             <div className="mt-5">
                 <div className="container">
-                    <div className="add_btn mt-2 mb-2">
-                        <NavLink to="/form" className="btn btn-primary">Add data</NavLink>
-                    </div>
-
+                 
                     <p><b>table
 
                         data  column..........</b></p>

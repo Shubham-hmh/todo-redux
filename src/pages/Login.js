@@ -24,7 +24,8 @@ const navigate =useNavigate();
      const action = await dispatch(loginUser(values));
      
     if (!action.error) {
-      navigate('/');
+
+      navigate('/home');
     }
 
     },

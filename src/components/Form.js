@@ -4,6 +4,7 @@ import { useFormik } from 'formik';
 import * as yup from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
 import { addTodo } from '../features/todo/todoSlice';
+import Layout from './Layout';
 
 const todoSchema = yup.object({
     title: yup.string().required("Title is Required"),
@@ -26,14 +27,16 @@ const Form = () => {
         onSubmit:async(values) => {
            const action = await dispatch(addTodo(values));
            if (!action.error) {
-            navigate('/');
+            navigate('/home');
           }
         },
     });
 
     return (
-        <div className="container">
-            <NavLink to="/">home</NavLink>
+       <>
+       <Layout/>
+  <div className="container">
+            <NavLink to="/home">home</NavLink>
             <form className="mt-4" onSubmit={formik.handleSubmit} >
                 <div className="row">
                     <div className="mb-3 col-lg-6 col-md-6 col-12">
@@ -76,6 +79,8 @@ const Form = () => {
             </form>
 
         </div>
+       </>
+      
     )
 }
 export default Form;
